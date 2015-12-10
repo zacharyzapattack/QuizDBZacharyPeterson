@@ -33,7 +33,7 @@ public class QuizDB {
     public static final String CREATE_QUIZ_TABLE =
             "CREATE TABLE " + QUIZ_TABLE + " (" +
                     QUESTION_ID         + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                    TEXT       + " TEXT    NOT NULL, " + CORRECT + "TEXT NOT NULL" +
+                    TEXT       + " TEXT    NOT NULL, " + CORRECT + " TEXT NOT NULL, " +
                     STATUS + " INTEGER NOT NULL);";
 
     public static final String DROP_QUIZ_TABLE =
@@ -195,7 +195,7 @@ public class QuizDB {
         return cursor;
     }
 
-    public Question getQuiz(int id) {
+    public Question getQuestion(int id) {
         String where = QUESTION_ID + "= ?";
         String[] whereArgs = { Integer.toString(id) };
 
